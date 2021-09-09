@@ -1,0 +1,1102 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment #7. Solution &#8212; mlcourse.ai bonus pack</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Topic 8. Stochastic Gradient Descent for regression and classification" href="../assignment08/assignment08_intro.html" />
+    <link rel="prev" title="Assignment #7. Task" href="assignment07_pca_clustering.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/mlcourse_ai_logo_bonus.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">mlcourse.ai bonus pack</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignment 1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment01/assignment01_intro.html">
+   Assignment 1 Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment01/assignment01_pandas_olympic.html">
+   Assignment 1 Task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment01/assignment01_pandas_olympic_solution.html">
+   Assignment 1 Solution
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignment 2
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment02/assignment02_intro.html">
+   Assignment 2 Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment02/assignment02_USA_flights_EDA.html">
+   Assignment 2 Task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment02/assignment02_USA_flights_EDA_solution.html">
+   Assignment 2 Solution
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignment 3
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment03/assignment03_intro.html">
+   Assignment 3 Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment03/assignment03_decision_trees.html">
+   Assignment 3 Task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment03/assignment03_decision_trees_solution.html">
+   Assignment 3 Solution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment03/assignment03_optional_implement_decision_tree.html">
+   Assignment 3 (opt.) Task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment03/assignment03_optional_implement_decision_tree_solution.html">
+   Assignment 3 (opt.) Solution
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignment 4
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment04/assignment04_intro.html">
+   Assignment 4 Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment04/assignment04_kaggle_alice_logistic_regression_sparse_data_feature_engineering.html">
+   Assignment 4 Task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment04/assignment04_kaggle_alice_logistic_regression_sparse_data_feature_engineering_solution.html">
+   Assignment 4 Solution
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignment 5
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment05/assignment05_intro.html">
+   Assignment 5 Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment05/assignment05_rf_logit_scoring_texts.html">
+   Assignment 5 Task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment05/assignment05_rf_logit_scoring_texts_solution.html">
+   Assignment 5 Solution
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignment 6
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment06/assignment06_intro.html">
+   Assignment 6 Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment06/assignment06_medium_popularity_beat_baseline.html">
+   Assignment 6 Task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment06/assignment06_medium_popularity_beat_baseline_solution.html">
+   Assignment 6 Solution
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignment 7
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignment07_intro.html">
+   Assignment 7 Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignment07_pca_clustering.html">
+   Assignment 7 Task
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Assignment 7 Solution
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignment 8
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment08/assignment08_intro.html">
+   Assignment 8 Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment08/assignment08_implement_sgd_regr_and_clf.html">
+   Assignment 8 Task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment08/assignment08_implement_sgd_regr_and_clf_solution.html">
+   Assignment 8 Solution
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignment 9
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment09/assignment09_intro.html">
+   Assignment 9 Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment09/assignment09_time_series.html">
+   Assignment 9 Task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment09/assignment09_time_series_solution.html">
+   Assignment 9 Solution
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignment 10
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment10/assignment10_intro.html">
+   Assignment 10 Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment10/assignment10_implement_boosting.html">
+   Assignment 10 Task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment10/assignment10_implement_boosting_solution.html">
+   Assignment 10 Solution
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/assignment07/assignment07_pca_clustering_solution.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/book/assignment07/assignment07_pca_clustering_solution.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <img src="https://habrastorage.org/webt/ia/m9/zk/iam9zkyzqebnf_okxipihkgjwnw.jpeg" />
+<p><strong><center><a class="reference external" href="https://mlcourse.ai">mlcourse.ai</a> – Open Machine Learning Course</strong> </center><br>
+Author: <a class="reference external" href="https://yorko.github.io">Yury Kashnitskiy</a> (&#64;yorko). Translated and edited by <a class="reference external" href="https://www.linkedin.com/in/egor-polusmak/">Egor Polusmak</a>, <a class="reference external" href="https://www.linkedin.com/in/anastasiamanokhina/">Anastasia Manokhina</a>, <a class="reference external" href="https://www.linkedin.com/in/eugene-mashkin-88490883/">Eugene Mashkin</a>, and <a class="reference external" href="https://www.linkedin.com/in/yuanyuanpao/">Yuanyuan Pao</a>. <a class="reference external" href="https://mlcourse.ai">mlcourse.ai</a> is powered by <a class="reference external" href="https://ods.ai/">OpenDataScience (ods.ai)</a> © 2017—2021</p>
+<div class="section" id="center-assignment-7-solution-center-a-class-tocskip">
+<h1><center>Assignment #7. Solution </center> <a class="tocSkip"><a class="headerlink" href="#center-assignment-7-solution-center-a-class-tocskip" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="center-principal-component-analysis-and-clustering-center-a-class-tocskip">
+<h2><center> Principal Component Analysis and Clustering </center><a class="tocSkip"><a class="headerlink" href="#center-principal-component-analysis-and-clustering-center-a-class-tocskip" title="Permalink to this headline">¶</a></h2>
+<p>In this assignment, we are going to walk through <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> built-in implementations of dimensionality reduction and clustering methods and apply these techniques to the popular “faces” dataset.</p>
+<p><strong>Your task is to:</strong></p>
+<ol class="simple">
+<li><p>write code and perform computations in the cells below;</p></li>
+<li><p>choose answers in the <a class="reference external" href="https://forms.gle/W1dtNVMSVpSQBt7s5">webform</a>.</p></li>
+</ol>
+<p><em>For discussions, please stick to <a class="reference external" href="https://opendatascience.slack.com/">ODS Slack</a>, channel <strong>#mlcourse_ai_news</strong>, pinned thread <strong>#a7_bonus</strong>. If you are sure that something is not 100% correct, please leave your feedback via the mentioned webform ↑</em></p>
+</div>
+<div class="section" id="principal-component-analysis">
+<h2>1. Principal Component Analysis<a class="headerlink" href="#principal-component-analysis" title="Permalink to this headline">¶</a></h2>
+<p>First import all required modules:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span><span class="p">,</span> <span class="n">KMeans</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="c1"># sharper plots</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use given toy data set:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">19.0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">7.0</span><span class="p">,</span> <span class="mf">18.0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">17.0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">22.0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">8.0</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_2$&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/assignment07_pca_clustering_solution_6_0.png" src="../../_images/assignment07_pca_clustering_solution_6_0.png" />
+</div>
+</div>
+<p><strong><font color='red'>Question 1.</font> What is the angle between the <span class="math notranslate nohighlight">\(x_1\)</span> axis and the vector corresponding to the first principal component for this data (don’t forget to rescale the data using StandardScaler)?</strong></p>
+<ul class="simple">
+<li><p>30 degrees</p></li>
+<li><p>45 degrees <strong><font color='red'>[+]</font></strong></p></li>
+<li><p>60 degrees</p></li>
+<li><p>75 degrees</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">svd</span>
+
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">Sigma</span><span class="p">,</span> <span class="n">VT</span> <span class="o">=</span> <span class="n">svd</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">VT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.70710678  0.70710678]
+ [-0.70710678  0.70710678]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><font color='red'>Question 2.</font> What are the eigenvalues of the <span class="math notranslate nohighlight">\(X^{\text{T}}X\)</span> matrix, given <span class="math notranslate nohighlight">\(X\)</span>, a scaled matrix from the previous question?</strong></p>
+<ul class="simple">
+<li><p>4 and 1.42</p></li>
+<li><p>16.2 and 2702.8</p></li>
+<li><p>4.02 and 51.99</p></li>
+<li><p>15.97 and 2.03 <strong><font color='red'>[+]</font></strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">X_scaled</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([15.96987204,  2.03012796])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><font color='red'>Question 3.</font> What is the meaning of the two numbers from the previous question?</strong></p>
+<ul class="simple">
+<li><p>their squares tell what part of the initial data’s variance is explained by principal components</p></li>
+<li><p>they define a rotation angle between the first principal component and the initial axis</p></li>
+<li><p>those numbers tell what part of the initial data’s variance is explained by principal components <strong><font color='red'>[+]</font></strong></p></li>
+<li><p>the square roots of those numbers define a rotation angle between the first principal component and the initial axis</p></li>
+</ul>
+<p>Let’s load a dataset of peoples’ faces and output their names (this step requires reliable and fast internet connection).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lfw_people</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_lfw_people</span><span class="p">(</span>
+    <span class="n">min_faces_per_person</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">resize</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;../../_static/data/faces&quot;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> objects, </span><span class="si">%d</span><span class="s2"> features, </span><span class="si">%d</span><span class="s2"> classes&quot;</span>
+    <span class="o">%</span> <span class="p">(</span><span class="n">lfw_people</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lfw_people</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">lfw_people</span><span class="o">.</span><span class="n">target_names</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Persons:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">lfw_people</span><span class="o">.</span><span class="n">target_names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1560 objects, 1850 features, 12 classes
+
+Persons:
+Ariel Sharon
+Colin Powell
+Donald Rumsfeld
+George W Bush
+Gerhard Schroeder
+Hugo Chavez
+Jacques Chirac
+Jean Chretien
+John Ashcroft
+Junichiro Koizumi
+Serena Williams
+Tony Blair
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look inside. All images are stored in a handy <code class="docutils literal notranslate"><span class="pre">lfw_people.images</span></code> array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lfw_people</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/assignment07_pca_clustering_solution_15_0.png" src="../../_images/assignment07_pca_clustering_solution_15_0.png" />
+</div>
+</div>
+<p><strong><font color='red'>Question 4.</font> What’s the <em>minimal</em> number of principal components is needed to explain 90% variance in the data (scaled using  StandardScaler)?</strong></p>
+<ul class="simple">
+<li><p>75</p></li>
+<li><p>76</p></li>
+<li><p>77 <strong><font color='red'>[+]</font></strong></p></li>
+<li><p>78</p></li>
+</ul>
+<p>For this task, you should be using the <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html"><code class="docutils literal notranslate"><span class="pre">svd_solver='randomized'</span></code></a> parameter, which is a PCA approximation, but it significantly increases performance on large data sets. Use fixed <code class="docutils literal notranslate"><span class="pre">random_state=1</span></code> for comparable results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">svd_solver</span><span class="o">=</span><span class="s2">&quot;randomized&quot;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">faces_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">lfw_people</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">faces_scaled</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> principal components explain </span><span class="si">%.2f%%</span><span class="s2"> of variance&quot;</span>
+    <span class="o">%</span> <span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">n_components_</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Number of components&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Total explained variance&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1560 principal components explain 100.00% of variance
+</pre></div>
+</div>
+<img alt="../../_images/assignment07_pca_clustering_solution_17_1.png" src="../../_images/assignment07_pca_clustering_solution_17_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note that np.where returns elements&#39; indices so the number of principal components is 76+1 = 77</span>
+<span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  76,   77,   78, ..., 1557, 1558, 1559]),)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print a picture showing the first 30 principal components (don’t be scared when you see the result). In order to create it, use 30 vectors from <code class="docutils literal notranslate"><span class="pre">pca.components_</span></code>, reshape them to their initial size (50 x 37) and display. Specify <code class="docutils literal notranslate"><span class="pre">cmap</span></code>=’binary’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">37</span><span class="p">)),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;binary&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/assignment07_pca_clustering_solution_20_0.png" src="../../_images/assignment07_pca_clustering_solution_20_0.png" />
+</div>
+</div>
+<p><strong><font color='red'>Question 5.</font> Within the first 30 principal components, which one brightens the left side of the face? More specifically, which principal component corresponds to a linear combination of the initial features (pixels’ intensity), which, when shown as an image, looks like a photo highlighted from the right side (the same as a face highlighted from its left side)?</strong></p>
+<ul class="simple">
+<li><p>1</p></li>
+<li><p>2 <strong><font color='red'>[+]</font></strong></p></li>
+<li><p>4</p></li>
+<li><p>5</p></li>
+</ul>
+<p>Now let’s create a projection of faces into the space of the first two principal components.</p>
+<p><strong><font color='red'>Question 6.</font> Who looks the least similar to other person in the dataset if only two first principal components are taken into consideration?</strong></p>
+<p>To answer the question, take two first principal components from scaled data, evaluate two mean principal components’ values for each person over all their images in dataset (again, use both svd_solver=’randomized’ and random_state=1). Then, having 12 two-dimensional points, find the one which has the largest distance from others (using Euclidean distances). You can do this either precisely or approximately using <code class="docutils literal notranslate"><span class="pre">sklearn.metrics.euclidean_distances</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn.heatmap</span></code>.</p>
+<ul class="simple">
+<li><p>Colin Powell</p></li>
+<li><p>George W Bush</p></li>
+<li><p>Jacques Chirac</p></li>
+<li><p>Serena Williams <strong><font color='red'>[+]</font></strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer</span>
+<span class="n">lfw_people</span><span class="o">.</span><span class="n">target_names</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lfw_people</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([&#39;Ariel Sharon&#39;, &#39;Colin Powell&#39;, &#39;Donald Rumsfeld&#39;, &#39;George W Bush&#39;,
+        &#39;Gerhard Schroeder&#39;, &#39;Hugo Chavez&#39;, &#39;Jacques Chirac&#39;,
+        &#39;Jean Chretien&#39;, &#39;John Ashcroft&#39;, &#39;Junichiro Koizumi&#39;,
+        &#39;Serena Williams&#39;, &#39;Tony Blair&#39;], dtype=&#39;&lt;U17&#39;),
+ 12)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">svd_solver</span><span class="o">=</span><span class="s2">&quot;randomized&quot;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">faces_scaled</span><span class="p">)</span>
+
+<span class="n">mean_face_centers</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lfw_people</span><span class="o">.</span><span class="n">target_names</span><span class="p">):</span>
+    <span class="n">cloud</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">faces_scaled</span><span class="p">[</span><span class="n">lfw_people</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="n">i</span><span class="p">])</span>
+    <span class="n">mean_face_centers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cloud</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">euclidean_distances</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">euclidean_distances</span><span class="p">(</span><span class="n">mean_face_centers</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">lfw_people</span><span class="o">.</span><span class="n">target_names</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/assignment07_pca_clustering_solution_25_0.png" src="../../_images/assignment07_pca_clustering_solution_25_0.png" />
+</div>
+</div>
+<p>The answer is Serena Williams.</p>
+</div>
+<div class="section" id="clustering">
+<h2>2. Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h2>
+<p>For the next question load the housing prices dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boston</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_boston</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using elbow-method (see <a class="reference external" href="https://medium.com/&#64;libfun/db7879568417">article 7</a> of the course) find the optimal number of clusters to set as a hyperparamenter for kMeans algorithm.</p>
+<p><strong><font color='red'>Question 7.</font> What is the optimal number of clusters for housing prices data set according to the elbow method? Use <code class="docutils literal notranslate"><span class="pre">random_state=1</span></code> in kMeans method, do not scale the data.</strong></p>
+<ul class="simple">
+<li><p>2 <strong><font color='red'>[+]</font></strong></p></li>
+<li><p>3</p></li>
+<li><p>4</p></li>
+<li><p>5</p></li>
+</ul>
+<p>In this case we are looking for the most significant curve fracture on the <code class="docutils literal notranslate"><span class="pre">Clusters</span> <span class="pre">number</span> <span class="pre">vs</span> <span class="pre">Centroid</span> <span class="pre">distances</span></code> graph. Consider the possible number of clusters from 2 to 10. Use <code class="docutils literal notranslate"><span class="pre">random_state=1</span></code> for the kMeans algorithm initialization.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer</span>
+<span class="n">func</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">func</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">inertia_</span><span class="p">))</span>
+
+
+<span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">func</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">func</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">func</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">func</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;k=</span><span class="si">{}</span><span class="s2">: D(k)=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">func</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k=2: D(k)=0.325
+k=3: D(k)=0.625
+k=4: D(k)=0.328
+k=5: D(k)=1.018
+k=6: D(k)=0.632
+k=7: D(k)=0.681
+k=8: D(k)=0.907
+</pre></div>
+</div>
+<img alt="../../_images/assignment07_pca_clustering_solution_32_1.png" src="../../_images/assignment07_pca_clustering_solution_32_1.png" />
+</div>
+</div>
+<p>Go back to the faces dataset (that is already scaled). Imagine that we did not know the names for who was each photo but that we knew that there were 12 different people. Let’s compare clustering results from 4 algorithms - k-means, Agglomerative clustering, Affinity Propagation, and Spectral clustering. Use the same respective parameters as in the end of <a class="reference external" href="https://medium.com/&#64;libfun/db7879568417">this article</a>, only change the number of clusters to 12.</p>
+<p><strong><font color='red'>Question 8.</font> Select all of the correct statements:</strong></p>
+<ul class="simple">
+<li><p>Agglomerative clustering worked better than others according to all metrics</p></li>
+<li><p>Clustering results are disappointing with no metric exceeding 0.35 <strong><font color='red'>[+]</font></strong></p></li>
+<li><p>Considering only 2 clusters (whether it is Serena Williams or not) and comparing clustering results with a binary vector, we can see that clustering algorithms work better, with some metrics exceeding 66% <strong><font color='red'>[+]</font></strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="p">(</span><span class="n">AffinityPropagation</span><span class="p">,</span> <span class="n">AgglomerativeClustering</span><span class="p">,</span>
+                             <span class="n">KMeans</span><span class="p">,</span> <span class="n">SpectralClustering</span><span class="p">)</span>
+
+<span class="n">algorithms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">AffinityPropagation</span><span class="p">(),</span>
+    <span class="n">SpectralClustering</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">affinity</span><span class="o">=</span><span class="s2">&quot;nearest_neighbors&quot;</span><span class="p">),</span>
+    <span class="n">AgglomerativeClustering</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">12</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">algo</span> <span class="ow">in</span> <span class="n">algorithms</span><span class="p">:</span>
+    <span class="n">algo</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">faces_scaled</span><span class="p">)</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;ARI&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">adjusted_rand_score</span><span class="p">(</span><span class="n">lfw_people</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span><span class="p">),</span>
+                <span class="s2">&quot;AMI&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">adjusted_mutual_info_score</span><span class="p">(</span>
+                    <span class="n">lfw_people</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span>
+                <span class="p">),</span>
+                <span class="s2">&quot;Homogenity&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">homogeneity_score</span><span class="p">(</span>
+                    <span class="n">lfw_people</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span>
+                <span class="p">),</span>
+                <span class="s2">&quot;Completeness&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">completeness_score</span><span class="p">(</span>
+                    <span class="n">lfw_people</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span>
+                <span class="p">),</span>
+                <span class="s2">&quot;V-measure&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">v_measure_score</span><span class="p">(</span><span class="n">lfw_people</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span><span class="p">),</span>
+                <span class="s2">&quot;Silhouette&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span><span class="p">(</span><span class="n">faces_scaled</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span><span class="p">),</span>
+            <span class="p">}</span>
+    <span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">res</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ARI&quot;</span><span class="p">,</span> <span class="s2">&quot;AMI&quot;</span><span class="p">,</span> <span class="s2">&quot;Homogenity&quot;</span><span class="p">,</span> <span class="s2">&quot;Completeness&quot;</span><span class="p">,</span> <span class="s2">&quot;V-measure&quot;</span><span class="p">,</span> <span class="s2">&quot;Silhouette&quot;</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;KMeans&quot;</span><span class="p">,</span> <span class="s2">&quot;Affinity&quot;</span><span class="p">,</span> <span class="s2">&quot;Spectral&quot;</span><span class="p">,</span> <span class="s2">&quot;Agglomerative&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/kashnitskiyy/anaconda3/lib/python3.7/site-packages/sklearn/cluster/_affinity_propagation.py:154: FutureWarning: &#39;random_state&#39; has been introduced in 0.23. It will be set to None starting from 1.0 (renaming of 0.25) which means that results will differ at every function call. Set &#39;random_state&#39; to None to silence this warning, or to 0 to keep the behavior of versions &lt;0.23.
+  FutureWarning
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ARI</th>
+      <th>AMI</th>
+      <th>Homogenity</th>
+      <th>Completeness</th>
+      <th>V-measure</th>
+      <th>Silhouette</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>KMeans</th>
+      <td>0.027093</td>
+      <td>0.072943</td>
+      <td>0.095802</td>
+      <td>0.083819</td>
+      <td>0.089410</td>
+      <td>0.044945</td>
+    </tr>
+    <tr>
+      <th>Affinity</th>
+      <td>0.014616</td>
+      <td>0.118340</td>
+      <td>0.305615</td>
+      <td>0.154552</td>
+      <td>0.205288</td>
+      <td>0.019190</td>
+    </tr>
+    <tr>
+      <th>Spectral</th>
+      <td>0.026194</td>
+      <td>0.079021</td>
+      <td>0.099480</td>
+      <td>0.093259</td>
+      <td>0.096269</td>
+      <td>0.039685</td>
+    </tr>
+    <tr>
+      <th>Agglomerative</th>
+      <td>0.027382</td>
+      <td>0.077457</td>
+      <td>0.099838</td>
+      <td>0.089044</td>
+      <td>0.094132</td>
+      <td>0.025744</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># And check the last statement</span>
+<span class="n">algorithms2</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">AffinityPropagation</span><span class="p">(),</span>
+    <span class="n">SpectralClustering</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">affinity</span><span class="o">=</span><span class="s2">&quot;nearest_neighbors&quot;</span><span class="p">),</span>
+    <span class="n">AgglomerativeClustering</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">is_serena</span> <span class="o">=</span> <span class="p">(</span><span class="n">lfw_people</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;int&quot;</span><span class="p">)</span>
+
+<span class="n">res2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">algo</span> <span class="ow">in</span> <span class="n">algorithms2</span><span class="p">:</span>
+    <span class="n">algo</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">faces_scaled</span><span class="p">)</span>
+    <span class="n">res2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;ARI&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">adjusted_rand_score</span><span class="p">(</span><span class="n">is_serena</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span><span class="p">),</span>
+                <span class="s2">&quot;AMI&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">adjusted_mutual_info_score</span><span class="p">(</span><span class="n">is_serena</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span><span class="p">),</span>
+                <span class="s2">&quot;Homogenity&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">homogeneity_score</span><span class="p">(</span><span class="n">is_serena</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span><span class="p">),</span>
+                <span class="s2">&quot;Completeness&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">completeness_score</span><span class="p">(</span><span class="n">is_serena</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span><span class="p">),</span>
+                <span class="s2">&quot;V-measure&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">v_measure_score</span><span class="p">(</span><span class="n">is_serena</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span><span class="p">),</span>
+                <span class="s2">&quot;Silhouette&quot;</span><span class="p">:</span> <span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span><span class="p">(</span><span class="n">faces_scaled</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">labels_</span><span class="p">),</span>
+            <span class="p">}</span>
+    <span class="p">)</span>
+
+<span class="n">results2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">res2</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ARI&quot;</span><span class="p">,</span> <span class="s2">&quot;AMI&quot;</span><span class="p">,</span> <span class="s2">&quot;Homogenity&quot;</span><span class="p">,</span> <span class="s2">&quot;Completeness&quot;</span><span class="p">,</span> <span class="s2">&quot;V-measure&quot;</span><span class="p">,</span> <span class="s2">&quot;Silhouette&quot;</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;KMeans&quot;</span><span class="p">,</span> <span class="s2">&quot;Affinity&quot;</span><span class="p">,</span> <span class="s2">&quot;Spectral&quot;</span><span class="p">,</span> <span class="s2">&quot;Agglomerative&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">results2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/kashnitskiyy/anaconda3/lib/python3.7/site-packages/sklearn/cluster/_affinity_propagation.py:154: FutureWarning: &#39;random_state&#39; has been introduced in 0.23. It will be set to None starting from 1.0 (renaming of 0.25) which means that results will differ at every function call. Set &#39;random_state&#39; to None to silence this warning, or to 0 to keep the behavior of versions &lt;0.23.
+  FutureWarning
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ARI</th>
+      <th>AMI</th>
+      <th>Homogenity</th>
+      <th>Completeness</th>
+      <th>V-measure</th>
+      <th>Silhouette</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>KMeans</th>
+      <td>0.027811</td>
+      <td>0.070053</td>
+      <td>0.200508</td>
+      <td>0.042976</td>
+      <td>0.070781</td>
+      <td>0.145569</td>
+    </tr>
+    <tr>
+      <th>Affinity</th>
+      <td>0.001555</td>
+      <td>0.033613</td>
+      <td>0.675966</td>
+      <td>0.023447</td>
+      <td>0.045322</td>
+      <td>0.019190</td>
+    </tr>
+    <tr>
+      <th>Spectral</th>
+      <td>0.104632</td>
+      <td>0.108844</td>
+      <td>0.276347</td>
+      <td>0.068378</td>
+      <td>0.109630</td>
+      <td>0.161030</td>
+    </tr>
+    <tr>
+      <th>Agglomerative</th>
+      <td>0.026231</td>
+      <td>0.061530</td>
+      <td>0.176463</td>
+      <td>0.037801</td>
+      <td>0.062264</td>
+      <td>0.119324</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Use the coordinates of 12 “average” people’s images you got before. Draw a dendrogram for them. Use the <code class="docutils literal notranslate"><span class="pre">scipy.cluster.hierarchy</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy.spatial.distance.pdist</span></code>, take parameters values from the appropriate example in the <a class="reference external" href="https://medium.com/&#64;libfun/db7879568417">article</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.cluster</span> <span class="kn">import</span> <span class="n">hierarchy</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">pdist</span>
+
+<span class="sd">&quot;&quot;&quot; Your code is here &quot;&quot;&quot;</span>
+<span class="n">distance_mat</span> <span class="o">=</span> <span class="n">pdist</span><span class="p">(</span><span class="n">mean_face_centers</span><span class="p">)</span>
+
+<span class="n">Z</span> <span class="o">=</span> <span class="n">hierarchy</span><span class="o">.</span><span class="n">linkage</span><span class="p">(</span><span class="n">distance_mat</span><span class="p">,</span> <span class="s2">&quot;single&quot;</span><span class="p">)</span>
+<span class="n">dn</span> <span class="o">=</span> <span class="n">hierarchy</span><span class="o">.</span><span class="n">dendrogram</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">color_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/assignment07_pca_clustering_solution_39_0.png" src="../../_images/assignment07_pca_clustering_solution_39_0.png" />
+</div>
+</div>
+<p><strong><font color='red'>Question 9.</font>  Look at the dendrogram and consider a step when just two clusters are left: Serena Williams vs. all.  Who was the last person added to the “big” cluster?</strong></p>
+<ul class="simple">
+<li><p>Gerhard Schroeder</p></li>
+<li><p>Jean Chretien <strong><font color='red'>[+]</font></strong></p></li>
+<li><p>John Ashcroft</p></li>
+<li><p>Junichiro Koizumi</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer</span>
+<span class="n">lfw_people</span><span class="o">.</span><span class="n">target_names</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Jean Chretien&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/assignment07"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="assignment07_pca_clustering.html" title="previous page"><center>Assignment #7. Task </center> <a class="tocSkip"></a>
+    <a class='right-next' id="next-link" href="../assignment08/assignment08_intro.html" title="next page">Topic 8. Stochastic Gradient Descent for regression and classification</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Yury Kashnitsky (yorko)<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
