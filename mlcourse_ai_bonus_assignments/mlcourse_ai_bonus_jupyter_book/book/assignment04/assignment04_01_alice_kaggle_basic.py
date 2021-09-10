@@ -8,6 +8,24 @@ from matplotlib import pyplot as plt
 pd.set_option('display.max_columns', None)
 np.set_printoptions(linewidth=160)
 os.getcwd()
+#%%
+"""Define all type transformations in a single function"""
+def convert_types(df: pd.DataFrame) -> pd.DataFrame:
+    sites = [s for s in df.columns if "site" in s]
+    df[sites] = df[sites].fillna(0).astype('uint16')
+    times = [t for t in df.columns if "time" in t]
+    df[times] = df[times].apply(pd.to_datetime)
+    if 'target' in df.columns:
+        df['target'] = df.target.astype('uint8')
+    return df
+
+#%%
+def write_to_submission_file(predicted_labels, out_file: str = 'to_submit.csv',
+                             target='target', index_label='session id'):
+    df = pd.DataFrame(predicted_labels,
+                      index = np.arange(1, len(predicted_labels)),
+                      columns=[target])
+    df.to_csv(out_file, index_label=index_label)
 
 #%%
 %%time
@@ -40,18 +58,8 @@ df['target'] = df.target.astype('uint8')
 df[sites].info()
 
 #%%
-
-"""Define all type transformations in a single function"""
-def convert_types(df: pd.DataFrame) -> pd.DataFrame:
-    sites = [s for s in df.columns if "site" in s]
-    df[sites] = df[sites].fillna(0).astype('uint16')
-    times = [t for t in df.columns if "time" in t]
-    df[times] = df[times].apply(pd.to_datetime)
-    if 'target' in df.columns:
-        df['target'] = df.target.astype('uint8')
-    return df
-
-
+""" Convert types in a single line """
+df = convert_types(df)
 #%%
 %%time
 train_sessions_str = df[sites].to_string(header=False, index=False).split("\n")
