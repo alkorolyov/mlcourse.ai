@@ -138,8 +138,8 @@ class AliceKaggle:
         else:
             return csr_matrix(tmp)
 
-    def add_multi_feature(self, feat_list: list):
-        X_new = self.X_full
+    def add_multi_feature(self, feat_list: list, X_sparse=None):
+        X_new = X_sparse
         for feat in feat_list:
             X_new = self.add_feature(feat, X_new)
         return X_new[:self.idx_split, :], X_new[self.idx_split:, :]
